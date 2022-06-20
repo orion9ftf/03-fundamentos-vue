@@ -1,5 +1,8 @@
 <template>
-  <h2>Counter</h2>
+  <!-- <h2>{{ title || 'Counter' }}</h2> -->
+  
+  <h2>{{ customTitle }}</h2>
+
   <p>{{ counter }}</p>
 
 <!-- la idea no es sobrecargar al componente con ecuaciones: -->
@@ -21,6 +24,7 @@
 
 <script>
 export default {
+  props: ['title'], //properties
   //name: 'Counter'
   data() {
     return {
@@ -43,6 +47,10 @@ export default {
     squareCounter() {
       // console.log('ejecución de propiedad computada')
       return this.counter * this.counter
+    },
+    customTitle() {
+      return this.title ? this.title : 'Counter'
+      // return this.title || 'Counter'
     }
   }
 }
