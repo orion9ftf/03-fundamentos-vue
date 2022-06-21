@@ -31,7 +31,7 @@ export default {
       default: 5,
       //required: true // obliga a pasarle un valor por defecto
       validator( value ) {
-        return value >= 100 
+        return value >= 0 
       }
     }
   },
