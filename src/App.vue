@@ -1,11 +1,11 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-
-  <Counter title="Entraron" />
-
+  
   <!-- <Counter title="Salieron" /> -->
-  <Counter />
-
+  <!-- <Counter v-bind:start="5"/> -->
+  <!-- <Counter :start="5"/> este sirve para la validación con validator {} -->  
+  <Counter /> 
+ 
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 <template>
   <!-- <h2>{{ title || 'Counter' }}</h2> -->
   
-  <h2>{{ customTitle }}</h2>
+  <h2>{{ customTitle }} {{ start }}</h2>
 
   <p>{{ counter }}</p>
 
@@ -24,11 +24,21 @@
 
 <script>
 export default {
-  props: ['title'], //properties
+  props: { //['title', 'start'], //properties
+    title: String,
+    start: {
+      type: Number,
+      default: 5,
+      //required: true // obliga a pasarle un valor por defecto
+      validator( value ) {
+        return value >= 100 
+      }
+    }
+  },
   //name: 'Counter'
   data() {
     return {
-      counter: 5
+      counter: this.start
     }
   },
   methods: { //en este caso se dispara muchas veces el mismo método
